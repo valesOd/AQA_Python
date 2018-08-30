@@ -15,3 +15,8 @@ jobs:
       - store_artifacts:
           path: test_reports
           destination: test_reports
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            py.test -vv test_fibonacci.py
