@@ -5,7 +5,7 @@ jobs:
       - image: circleci/python:3.6.6-stretch-node-browsers
     working_directory: ~/AQA_Python
     steps:
-     - checkout
+      - checkout
       - run:
           name: install dependencies
           command: |
