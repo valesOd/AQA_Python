@@ -19,4 +19,4 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            py.test -vv test_jira.py -n 4 --reruns 2
+            py.test -vv -n 4 test_jira.py
