@@ -4,10 +4,7 @@
        {
           "key": "AQAPYTHON"
        },
-       "summary": "Serhii new issue.",
-       "description": "New issue",
-       "issuetype": {
-          "name": "Bug"
-       }
+       "summary": "Serhii new issue without issue type .",
+       "description": "New issue"
    }
 }

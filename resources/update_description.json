@@ -1,5 +1,5 @@
 {
     "fields" : {
-        "priority": {"name" : "High"}
+        "description": "Some description"
     }
 }
