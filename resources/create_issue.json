@@ -1,0 +1,13 @@
+{
+    "fields": {
+       "project":
+       {
+          "key": "AQAPYTHON"
+       },
+       "summary": "Seva Creating issue.",
+       "description": "Creating issue",
+       "issuetype": {
+          "name": "Bug"
+       }
+   }
+}
