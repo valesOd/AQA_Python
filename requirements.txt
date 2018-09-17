@@ -15,3 +15,4 @@ requests==2.13.0
 six==1.10.0
 wrapt==1.10.8
 pytest-xdist==1.23.0
+pytest-rerunfailures==4.1
