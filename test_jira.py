@@ -2,6 +2,7 @@ import pytest
 import requests
 
 from tools import Tools
+from random import randint
 
 auth_user = 'Sergey_Valevskyi'
 auth_passwd = 'Sergey_Valevskyi'
@@ -47,3 +48,6 @@ def test_find_issue(res, jql):
 def test_update_issue(res, file_name, id):
     assert res == requests.request("PUT", auth_url + 'issue/' + id, data=Tools.read_file(file_name),
                                    headers=auth_headers).status_code
+    
+def test_random():
+    assert randint(1, 2) == 2
