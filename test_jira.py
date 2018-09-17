@@ -41,7 +41,7 @@ def test_find_issue(res, jql):
 
 @pytest.mark.parametrize("res,file_name,id", [
      (204, 'update_priority.json', 'AQAPYTHON-7932'),
-     (204, 'update_description.json', 'AQAPYTHON-7932'),
+     (204, 'update_issue_assignee.json', 'AQAPYTHON-7932'),
      (204, 'update_summery.json', 'AQAPYTHON-7932')
 ])
 def test_update_issue(res, file_name, id):
