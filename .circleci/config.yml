@@ -19,4 +19,4 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            py.test -vv test_fibonacci.py
+            py.test -vv test_jira.py
