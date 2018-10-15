@@ -78,6 +78,7 @@ class TestUI:
         issue_page = Issue()
         issue_page.go(name)
         base_page.click_button(issue_page.edit)
+        base_page.click_button(Main.close_notif)
         base_page.fill_field(field, value)
         base_page.click_button(issue_page.submit)
         assert res in base_page.wait_until_visible(res)
