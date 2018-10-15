@@ -20,9 +20,9 @@ jobs:
           command: |
             . venv/bin/activate
             chmod 777 ./utils/chromedriver
-            py.test -vv -n 4 --reruns 2 test_ui.py --alluredir=./allure-results
+            py.test -vv -n 4 --reruns 2 test_ui.py --alluredir=./allure-report
             ./allure-2.7.0/bin/allure generate -c
       - store_artifacts:
-          path: allure-results
-          destination: allure-results
+          path: allure-report
+          destination: allure-report
 
