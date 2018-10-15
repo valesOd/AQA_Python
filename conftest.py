@@ -1,4 +1,5 @@
 import pytest
+import os
 from selenium import webdriver
 from utils.variable import global_web_driver as driver
 
@@ -14,4 +15,8 @@ def my_fixture(request):
 
 
 def __driver_init():
-    return webdriver.Chrome("./utils/chromedriver.exe")
+    if os.name == 'nt':
+        web_driver = webdriver.Chrome("./utils/chromedriver.exe")
+    else:
+        web_driver = webdriver.Chrome("./utils/chromedriver")
+    return web_driver
