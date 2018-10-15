@@ -20,4 +20,4 @@ jobs:
           command: |
             . venv/bin/activate
             chmod 777 ./utils/chromedriver
-            py.test -vv -n 4 --reruns 2 test_ui.py --driver Chrome --driver-path ./utils/chromedriver
+            py.test -vv -n 4 --reruns 2 test_ui.py
