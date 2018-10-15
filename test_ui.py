@@ -1,6 +1,7 @@
 from selenium import webdriver
 import unittest
 import pytest
+import allure
 from selenium.webdriver.common.by import By
 
 from page_object.Issue import Issue
@@ -22,6 +23,7 @@ class TestUI:
         'Sorry, your username and password are incorrect - please try again.', "Sergey_Valevskyi", "Sergey_Valevskyi1"),
         ('Projects', "Sergey_Valevskyi", "Sergey_Valevskyi"),
     ])
+    @allure.title('Test-Login')
     def test_login(self, res, login, passwd):
         login_page = Login()
         login_page.go("http://jira.hillel.it:8080/secure/Dashboard.jspa")
@@ -37,6 +39,7 @@ class TestUI:
          "Serhii new issue with too long summery.Serhii new issue with too long summery.Serhii new issue with too long summery.Serhii new issue with too long summery.Serhii new issue with too long summery.Serhii new issue with too long summery.Serhii new issue with too long summery.Serhii new issue with too long summery."),
         ('You must specify a summary of the issue.', ""),
     ])
+    @allure.title('Test-Create-Issue')
     def test_create_issue(self, res, summary):
         base_page = BasePage()
         login_page = Login()
@@ -47,10 +50,11 @@ class TestUI:
         assert res in base_page.wait_until_visible(res)
 
     @pytest.mark.parametrize("res, name", [
-        ('5', "Serhii"),
-        ('0', "Seva test"),
-        ('1', "Summary after update"),
+        # ('5', "Serhii"),
+        # ('0', "Seva test"),
+        ('22', "Summary after update"),
     ])
+    @allure.title('Test-Search-Issue')
     def test_search_issue(self, res, name):
         base_page = BasePage()
         login_page = Login()
@@ -65,6 +69,7 @@ class TestUI:
         ("AQAPYTHON-7928", Issue.summary, "New summary"),
         ("AQAPYTHON-7928", Issue.assignee, "Sergey_Valevskyi"),
     ])
+    @allure.title('Test-Update-Issue')
     def test_update_issue(self, name, field, value):
         res = "has been updated."
         base_page = BasePage()

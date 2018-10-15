@@ -13,7 +13,7 @@ class BasePage(object):
     def __init__(self):
         import utils.variable
         self.driver = utils.variable.global_web_driver
-        self.wait = WebDriverWait(self.driver, 180)
+        self.wait = WebDriverWait(self.driver, 40)
 
     def click_button(self, button):
         self.wait.until(
