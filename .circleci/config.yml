@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.6.6-stretch-node-browsers
+      - image: circleci/python:3.7-stretch-node-browsers
     working_directory: ~/AQA_Python
     steps:
       - checkout
@@ -19,4 +19,5 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            py.test -vv -n 4 --reruns 2 test_jira.py
+            chmod 777 ./utils/chromedriver
+            py.test -vv -n 4 --reruns 2 test_ui.py --driver Chrome --driver-path ./utils/chromedriver
