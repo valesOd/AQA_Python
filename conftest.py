@@ -1,7 +1,11 @@
 import pytest
 import os
 from selenium import webdriver
-from utils.variable import global_web_driver as driver
+
+try:
+    from utils.variable import global_web_driver as driver
+except ImportError:
+    from .utils.variable import global_web_driver as driver
 
 
 @pytest.fixture(scope="function", autouse=True)
