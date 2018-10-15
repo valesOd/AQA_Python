@@ -16,8 +16,6 @@ from page_object.CreateIssue import CreateIssue
 class TestUI:
 
     @pytest.mark.parametrize("res, name", [
-        ('5', "Serhii"),
-        ('0', "Seva test"),
         ('1', "Summary after update"),
     ])
     @allure.title('Test-Search-Issue')
