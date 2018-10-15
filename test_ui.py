@@ -44,6 +44,7 @@ class TestUI:
         base_page = BasePage()
         login_page = Login()
         login_page.loginAs("Sergey_Valevskyi", "Sergey_Valevskyi")
+        base_page.click_button(Main.create_issue)
         base_page.fill_field(CreateIssue.summary, summary)
         base_page.click_button(CreateIssue.create_issue_submit)
         assert res in base_page.wait_until_visible(res)
