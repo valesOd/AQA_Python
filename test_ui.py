@@ -50,9 +50,9 @@ class TestUI:
         assert res in base_page.wait_until_visible(res)
 
     @pytest.mark.parametrize("res, name", [
-        # ('5', "Serhii"),
-        # ('0', "Seva test"),
-        ('22', "Summary after update"),
+        ('5', "Serhii"),
+        ('0', "Seva test"),
+        ('1', "Summary after update"),
     ])
     @allure.title('Test-Search-Issue')
     def test_search_issue(self, res, name):
