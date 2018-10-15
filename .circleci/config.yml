@@ -11,6 +11,7 @@ jobs:
           command: |
            python3 -m venv venv
             . venv/bin/activate
+            date
             pip install -r requirements.txt
             wget https://bintray.com/qameta/generic/download_file?file_path=io%2Fqameta%2Fallure%2Fallure%2F2.7.0%2Fallure-2.7.0.zip
             unzip download_file?file_path=io%2Fqameta%2Fallure%2Fallure%2F2.7.0%2Fallure-2.7.0.zip
