@@ -23,6 +23,6 @@ jobs:
             py.test -vv -n 4 --reruns 2 test_ui.py --alluredir=./allure-results
             ./allure-2.7.0/bin/allure generate -c
       - store_artifacts:
-          path: allure-report
-          destination: allure-report
+          path: allure-results
+          destination: allure-results
 
