@@ -1,7 +1,6 @@
 To run tests :
 
 pip install -r requirements.txt
-
 py.test -vv -n 4 --reruns 2 test_ui.py --alluredir=./allure-results
 
 Generate report:
