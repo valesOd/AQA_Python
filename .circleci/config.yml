@@ -21,7 +21,9 @@ jobs:
             . venv/bin/activate
             chmod 777 ./utils/chromedriver
             py.test -vv -n 4 --reruns 2 test_ui.py --alluredir=./allure-results
-            allure-2.7.0/bin/allure generate -c
+      - run:
+          halt_build_on_fail: false  # default true
+          command: allure-2.7.0/bin/allure generate -c
       - store_artifacts:
           path: allure-report
           destination: allure-report
