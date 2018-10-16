@@ -1,3 +1,5 @@
+allure-pytest==2.5.1
+allure-python-commons==2.5.1
 appdirs==1.4.0
 astroid==1.4.9
 click==6.7
@@ -14,3 +16,6 @@ pytest==3.7.4
 requests==2.13.0
 six==1.10.0
 wrapt==1.10.8
+pytest-xdist==1.23.0
+pytest-rerunfailures==4.1
+selenium
