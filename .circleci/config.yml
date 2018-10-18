@@ -16,10 +16,15 @@ jobs:
             unzip download_file?file_path=io%2Fqameta%2Fallure%2Fallure%2F2.7.0%2Fallure-2.7.0.zip
             export PATH=$PATH:/home/circleci/repo/allure-2.7.0/bin
       - run:
-          name: run tests
+          name: run API test
           command: |
             . venv/bin/activate
             chmod 777 ./utils/chromedriver
+            py.test -vv -n 4 --reruns 2 test_jira_api.py --alluredir=./allure-results
+      - run:
+          name: run UI test
+          command: |
+            . venv/bin/activate
             py.test -vv -n 4 --reruns 2 test_ui.py --alluredir=./allure-results
       - run:
           halt_build_on_fail: false  # default true

@@ -13,6 +13,7 @@ from page_object.Main import Main
 from page_object.CreateIssue import CreateIssue
 
 
+@pytest.mark.usefixtures("get_driver")
 class TestUI:
 
     @pytest.mark.parametrize("res,login,passwd", [

@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
+import allure
 
 from page_object.BasePage import BasePage
 
@@ -12,6 +13,7 @@ class Issue(BasePage):
     edit = (By.ID, 'edit-issue')
     url = "http://jira.hillel.it:8080/browse/"
 
+    @allure.step
     def go(self, name):
         self.driver.get(self.url + name)
         self.wait_until_visible(name)

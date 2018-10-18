@@ -1,5 +1,6 @@
 import pytest
 import selenium
+import allure
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -15,12 +16,14 @@ class BasePage(object):
         self.driver = utils.variable.global_web_driver
         self.wait = WebDriverWait(self.driver, 40)
 
+    @allure.step
     def click_button(self, button):
         self.wait.until(
             expected_conditions.visibility_of_element_located(button))
         element = self.driver.find_element(button[0], button[1])
         element.click()
 
+    @allure.step
     def fill_field(self, field, text):
         self.wait.until(
             expected_conditions.visibility_of_element_located(field))
@@ -29,10 +32,12 @@ class BasePage(object):
         element.clear()
         element.send_keys(text)
 
+    @allure.step
     def wait_until_visible(self, text):
         return self.wait.until(
             expected_conditions.visibility_of_element_located((By.XPATH, "//*[contains(.,'" + text + "')]"))).text
 
+    @allure.step
     def wait_equal_value(self, field, value):
         count = "0"
         try:
@@ -43,5 +48,6 @@ class BasePage(object):
         finally:
             return count
 
+    @allure.step
     def go(self, text):
         self.driver.get(text)

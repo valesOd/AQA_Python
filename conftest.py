@@ -9,8 +9,8 @@ except ImportError:
     from .utils.variable import global_web_driver as driver
 
 
-@pytest.fixture(scope="function", autouse=True)
-def my_fixture(request):
+@pytest.fixture(scope="class")
+def get_driver(request):
     import utils.variable
     if driver is None:
         utils.variable.global_web_driver = __driver_init()
@@ -33,7 +33,7 @@ def pytest_runtest_makereport(item, call):
     rep = outcome.get_result()
     import utils.variable
     sr_driver = utils.variable.global_web_driver
-    if rep.when == 'call' and rep.failed:
+    if rep.when == 'call' and rep.failed and sr_driver is not None:
         allure.attach(sr_driver.get_screenshot_as_png(),
                       name=item.name,
                       attachment_type=allure.attachment_type.PNG)
