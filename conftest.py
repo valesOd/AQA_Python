@@ -9,7 +9,7 @@ except ImportError:
     from .utils.variable import global_web_driver as driver
 
 
-@pytest.fixture(scope="class")
+@pytest.fixture(scope="function")
 def get_driver(request):
     import utils.variable
     if driver is None:
